@@ -47,6 +47,7 @@ type
     statUseful: TLabeledEdit;
     statUnuse: TLabeledEdit;
     btnAktualisierung: TButton;
+    StatusBar1: TStatusBar;
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);

@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 510
   Top = 238
   Width = 400
-  Height = 395
+  Height = 415
   Caption = 'GUID-Maker'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,10 +19,15 @@ object Form1: TForm1
     Top = 5
     Width = 377
     Height = 356
-    ActivePage = TabSheet1
+    ActivePage = TabSheet4
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 0
     object TabSheet1: TTabSheet
+      Hint = 'Verbindungserstellung zur Datenbank'
       Caption = '&Verbindung'
+      ParentShowHint = False
+      ShowHint = True
       OnHide = TabSheet1Hide
       OnShow = TabSheet1Show
       object Label4: TLabel
@@ -61,8 +66,11 @@ object Form1: TForm1
           Top = 152
           Width = 137
           Height = 25
+          Hint = 'l'#228'dt einen gespeicherten Pfad zu einer UDL-Datei'
           Caption = 'Pfad &laden'
-          TabOrder = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
           OnClick = Button6Click
         end
         object Button3: TButton
@@ -70,8 +78,11 @@ object Form1: TForm1
           Top = 120
           Width = 137
           Height = 25
+          Hint = 'speichert den angezeigten Pfad zur UDL-Datei'
           Caption = 'Pfad &speichern'
-          TabOrder = 1
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
           OnClick = Button3Click
         end
         object Button2: TButton
@@ -79,8 +90,11 @@ object Form1: TForm1
           Top = 120
           Width = 163
           Height = 25
+          Hint = 'testet die Verbindung zur Datenbank'
           Caption = 'Verbindung &testen'
-          TabOrder = 2
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
           OnClick = Button2Click
         end
         object Button5: TButton
@@ -90,21 +104,27 @@ object Form1: TForm1
           Height = 25
           Action = FileOpen1
           Caption = '&durchsuchen...'
-          TabOrder = 3
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 4
         end
         object LabeledEdit1: TLabeledEdit
           Left = 9
           Top = 24
           Width = 337
           Height = 21
+          Hint = 'Pfad zur aktuellen UDL-Datei'
           EditLabel.Width = 106
           EditLabel.Height = 13
           EditLabel.Caption = 'Datenbankver&bindung'
-          TabOrder = 4
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
         end
       end
     end
     object TabSheet2: TTabSheet
+      Hint = 'EinzelGUID-Erzeugung'
       Caption = '&GUID erzeugen'
       ImageIndex = 1
       object Panel2: TPanel
@@ -128,6 +148,7 @@ object Form1: TForm1
           Top = 19
           Width = 246
           Height = 21
+          Hint = 'erzeugter GUID in der Ablage'
           EditLabel.Width = 74
           EditLabel.Height = 13
           EditLabel.Caption = '&erzeugter GUID'
@@ -139,7 +160,7 @@ object Form1: TForm1
           Top = 54
           Width = 153
           Height = 25
-          Hint = 'Kopieren|Markiertes Objekt in die Zwischenablage kopieren'
+          Hint = 'neuen GUID in die Zwischenablage kopieren'
           Caption = 'GUID erzeugen und &Copy'
           TabOrder = 1
           OnClick = Button4Click
@@ -147,6 +168,7 @@ object Form1: TForm1
       end
     end
     object TabSheet3: TTabSheet
+      Hint = 'GUID-Erzeugung in der Datenbank'
       Caption = 'Daten&bank'
       ImageIndex = 2
       OnShow = TabSheet3Show
@@ -171,6 +193,7 @@ object Form1: TForm1
           Top = 169
           Width = 153
           Height = 25
+          Hint = 'erzeugt die Anzahl der gew'#252'nschten GUID'#39's'
           Caption = 'GUID'#39's in die &Datenbank'
           TabOrder = 0
           OnClick = Button1Click
@@ -180,6 +203,7 @@ object Form1: TForm1
           Top = 41
           Width = 337
           Height = 120
+          Hint = 'in datenbank vorhandene GUID'#39's'
           DataSource = DataSource1
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
@@ -193,6 +217,7 @@ object Form1: TForm1
           Top = 9
           Width = 84
           Height = 21
+          Hint = 'Anzahl der zu erzeugenden GUID'#39's'
           EditLabel.Width = 145
           EditLabel.Height = 13
           EditLabel.Caption = '&Anzahl zu erzeugender GUID'#39's'
@@ -221,6 +246,7 @@ object Form1: TForm1
           Top = 17
           Width = 184
           Height = 74
+          Hint = 'l'#246'schen gekennzeichneter Art von GUID'#39's'
           ItemIndex = 1
           Items.Strings = (
             'all&e'
@@ -232,6 +258,7 @@ object Form1: TForm1
           Top = 64
           Width = 75
           Height = 25
+          Hint = 'l'#246'scht ausgew'#228'hlte GUID'#39's'
           Caption = '&l'#246'schen'
           TabOrder = 1
           OnClick = Button7Click
@@ -239,6 +266,7 @@ object Form1: TForm1
       end
     end
     object TabSheet4: TTabSheet
+      Hint = 'Statistik in der DB vorhandenen GUID'#39's'
       Caption = '&Statistik'
       ImageIndex = 3
       OnShow = btnAktualisierungClick
@@ -254,6 +282,7 @@ object Form1: TForm1
           Top = 24
           Width = 121
           Height = 21
+          Hint = 'Anzahl in DB vorhandener GUID'#39's'
           EditLabel.Width = 153
           EditLabel.Height = 13
           EditLabel.Caption = 'Anzahl der vorhandenen GUID'#39's'
@@ -265,6 +294,7 @@ object Form1: TForm1
           Top = 64
           Width = 121
           Height = 21
+          Hint = 'Anzahl in DB vorhandener verwendbarer GUID'#39's'
           EditLabel.Width = 158
           EditLabel.Height = 13
           EditLabel.Caption = 'Anzahl der verwendbaren GUID'#39's'
@@ -276,6 +306,7 @@ object Form1: TForm1
           Top = 104
           Width = 121
           Height = 21
+          Hint = 'Anzahl in der DB vorhandener bereits eingesetzter GUID'#39's'
           EditLabel.Width = 137
           EditLabel.Height = 13
           EditLabel.Caption = 'Anzahl der benutzten GUID'#39's'
@@ -287,12 +318,20 @@ object Form1: TForm1
           Top = 160
           Width = 123
           Height = 25
+          Hint = 'Aktualisiert die Statistik'
           Caption = '&aktualisieren'
           TabOrder = 3
           OnClick = btnAktualisierungClick
         end
       end
     end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 369
+    Width = 392
+    Height = 19
+    Panels = <>
   end
   object ADOTable1: TADOTable
     ConnectionString = 'FILE NAME=C:\Programme\Borland\Delphi7\Projects\GUIDMaker.udl'
