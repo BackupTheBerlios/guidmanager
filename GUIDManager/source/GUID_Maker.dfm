@@ -36,10 +36,10 @@ object Form1: TForm1
       object Label5: TLabel
         Left = 11
         Top = 312
-        Width = 350
-        Height = 116
+        Width = 342
+        Height = 65
         Alignment = taCenter
-        Caption = 'Freeware - Copyright by dsfdb.org - Sebesta Thomas, 2004'
+        Caption = 'Freeware under GNU-License - Copyright by Sebesta Thomas, 2004'
         WordWrap = True
       end
       object Panel3: TPanel

@@ -114,6 +114,7 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
 
 try
+  ADOTable1.Active := False;
   ADOTable1.ConnectionString := 'FILE NAME='+ LabeledEdit1.Text;
   ADOTable1.Active := True;
   ShowMessage('Verbindungstest erfolgreich - Auf geht''s!');
@@ -194,6 +195,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
 UDLPath := GetUDLPath;
 ConnectionString := GetConnectionString;
+//ADOTable1.Active := True;
 end;
 
 procedure TForm1.TabSheet1Show(Sender: TObject);
