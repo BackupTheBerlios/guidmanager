@@ -22,7 +22,7 @@ object Form1: TForm1
     ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = 'Verbindung'
+      Caption = '&Verbindung'
       OnHide = TabSheet1Hide
       OnShow = TabSheet1Show
       object Label4: TLabel
@@ -36,8 +36,8 @@ object Form1: TForm1
       object Label5: TLabel
         Left = 11
         Top = 312
-        Width = 342
-        Height = 65
+        Width = 321
+        Height = 13
         Alignment = taCenter
         Caption = 'Freeware under GNU-License - Copyright by Sebesta Thomas, 2004'
         WordWrap = True
@@ -61,7 +61,7 @@ object Form1: TForm1
           Top = 152
           Width = 137
           Height = 25
-          Caption = 'Pfad laden'
+          Caption = 'Pfad &laden'
           TabOrder = 0
           OnClick = Button6Click
         end
@@ -70,7 +70,7 @@ object Form1: TForm1
           Top = 120
           Width = 137
           Height = 25
-          Caption = 'Pfad speichern'
+          Caption = 'Pfad &speichern'
           TabOrder = 1
           OnClick = Button3Click
         end
@@ -79,7 +79,7 @@ object Form1: TForm1
           Top = 120
           Width = 163
           Height = 25
-          Caption = 'Verbindung testen'
+          Caption = 'Verbindung &testen'
           TabOrder = 2
           OnClick = Button2Click
         end
@@ -89,6 +89,7 @@ object Form1: TForm1
           Width = 107
           Height = 25
           Action = FileOpen1
+          Caption = '&durchsuchen...'
           TabOrder = 3
         end
         object LabeledEdit1: TLabeledEdit
@@ -98,13 +99,13 @@ object Form1: TForm1
           Height = 21
           EditLabel.Width = 106
           EditLabel.Height = 13
-          EditLabel.Caption = 'Datenbankverbindung'
+          EditLabel.Caption = 'Datenbankver&bindung'
           TabOrder = 4
         end
       end
     end
     object TabSheet2: TTabSheet
-      Caption = 'GUID erzeugen'
+      Caption = '&GUID erzeugen'
       ImageIndex = 1
       object Panel2: TPanel
         Left = 8
@@ -129,7 +130,7 @@ object Form1: TForm1
           Height = 21
           EditLabel.Width = 74
           EditLabel.Height = 13
-          EditLabel.Caption = 'erzeugter GUID'
+          EditLabel.Caption = '&erzeugter GUID'
           ReadOnly = True
           TabOrder = 0
         end
@@ -139,7 +140,7 @@ object Form1: TForm1
           Width = 153
           Height = 25
           Hint = 'Kopieren|Markiertes Objekt in die Zwischenablage kopieren'
-          Caption = 'GUID erzeugen und Copy'
+          Caption = 'GUID erzeugen und &Copy'
           TabOrder = 1
           OnClick = Button4Click
         end
@@ -165,7 +166,7 @@ object Form1: TForm1
           Top = 169
           Width = 153
           Height = 25
-          Caption = 'GUID'#39's in die Datenbank'
+          Caption = 'GUID'#39's in die &Datenbank'
           TabOrder = 0
           OnClick = Button1Click
         end
@@ -189,7 +190,7 @@ object Form1: TForm1
           Height = 21
           EditLabel.Width = 145
           EditLabel.Height = 13
-          EditLabel.Caption = 'Anzahl zu erzeugender GUID'#39's'
+          EditLabel.Caption = '&Anzahl zu erzeugender GUID'#39's'
           LabelPosition = lpRight
           LabelSpacing = 10
           TabOrder = 2
@@ -198,7 +199,6 @@ object Form1: TForm1
     end
   end
   object ADOTable1: TADOTable
-    Active = True
     ConnectionString = 'FILE NAME=C:\Programme\Borland\Delphi7\Projects\GUIDMaker.udl'
     CursorType = ctStatic
     TableName = 'gid_admin'
