@@ -19,7 +19,7 @@ object Form1: TForm1
     Top = 5
     Width = 377
     Height = 356
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Verbindung'
@@ -149,6 +149,7 @@ object Form1: TForm1
     object TabSheet3: TTabSheet
       Caption = 'Daten&bank'
       ImageIndex = 2
+      OnShow = TabSheet3Show
       object Panel1: TPanel
         Left = 8
         Top = 8
@@ -210,8 +211,8 @@ object Form1: TForm1
         object Label6: TLabel
           Left = 14
           Top = 5
-          Width = 195
-          Height = 20
+          Width = 150
+          Height = 13
           Caption = 'l'#246'scht GUID'#39's in der Datenbank'
           WordWrap = True
         end

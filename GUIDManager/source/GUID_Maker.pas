@@ -51,6 +51,7 @@ type
     procedure TabSheet1Show(Sender: TObject);
     procedure TabSheet1Hide(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure TabSheet3Show(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -218,7 +219,7 @@ begin
     except
       on EConnectionInvalid do  ShowMessage('keine UDL-Datei gespeichert, bitte angeben');
     end;
-  
+
     
     PageControl1.ActivePage := TabSheet2;
     TabSheet2.Visible := False;
@@ -253,6 +254,16 @@ if RadioGroup1.ItemIndex = 1 then
   end;
 
   ADOTable1.Active := False;
+  ADOTable1.Active := True;
+  LabeledEdit3.Text := '';
+  LabeledEdit3.SetFocus;
+
+end;
+
+procedure TForm1.TabSheet3Show(Sender: TObject);
+begin
+  ADOTable1.Active := False;
+  ADOTable1.ConnectionString := getConnectionString;
   ADOTable1.Active := True;
   LabeledEdit3.Text := '';
   LabeledEdit3.SetFocus;
