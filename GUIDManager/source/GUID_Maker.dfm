@@ -19,7 +19,7 @@ object Form1: TForm1
     Top = 5
     Width = 377
     Height = 356
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Verbindung'

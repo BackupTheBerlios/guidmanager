@@ -41,6 +41,12 @@ type
     Label6: TLabel;
     RadioGroup1: TRadioGroup;
     Button7: TButton;
+    TabSheet4: TTabSheet;
+    Panel5: TPanel;
+    statSummary: TLabeledEdit;
+    statUseful: TLabeledEdit;
+    statUnuse: TLabeledEdit;
+    btnAktualisierung: TButton;
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -52,6 +58,7 @@ type
     procedure TabSheet1Hide(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure TabSheet3Show(Sender: TObject);
+    procedure btnAktualisierungClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -159,6 +166,7 @@ var sql, Guid: string; Z,I: integer;
 begin
 ADOTable1.Active := False;
 ADOTable1.ConnectionString := ConnectionString;
+ADOQuery1.ConnectionString := GetConnectionString;
 try
   ADOTable1.Active := True;
 
@@ -169,6 +177,7 @@ try
   begin
     Guid := CreateGuid;
     sql := 'Insert gid_admin (guid) Values ("' + Guid + '")';
+    ADOQuery1.SQL.Clear;
     ADOQuery1.SQL.Add(sql);
     ADOQuery1.ExecSQL;
     ADOQuery1.SQL.Delete(0);
@@ -237,10 +246,12 @@ var sql: string;
 
 begin
 ADOTable1.Active := False;
-ADOTable1.ConnectionString := ConnectionString;
+ADOTable1.ConnectionString := GetConnectionString;
+ADOQuery1.ConnectionString := GetConnectionString;
 if RadioGroup1.ItemIndex = 0 then
   begin
     sql := 'Delete from gid_admin';
+    ADOQuery1.SQL.Clear;
     ADOQuery1.SQL.Add(sql);
     ADOQuery1.ExecSQL;
     ADOQuery1.SQL.Delete(0);
@@ -248,6 +259,7 @@ if RadioGroup1.ItemIndex = 0 then
 if RadioGroup1.ItemIndex = 1 then
   begin
     sql := 'Delete from gid_admin WHERE in_use = 1';
+    ADOQuery1.SQL.Clear;
     ADOQuery1.SQL.Add(sql);
     ADOQuery1.ExecSQL;
     ADOQuery1.SQL.Delete(0);
@@ -263,10 +275,39 @@ end;
 procedure TForm1.TabSheet3Show(Sender: TObject);
 begin
   ADOTable1.Active := False;
-  ADOTable1.ConnectionString := getConnectionString;
+  ADOTable1.ConnectionString := GetConnectionString;
   ADOTable1.Active := True;
   LabeledEdit3.Text := '';
   LabeledEdit3.SetFocus;
+
+end;
+
+procedure TForm1.btnAktualisierungClick(Sender: TObject);
+var count: integer;
+
+begin
+  ADOTable1.Active := False;
+  ADOTable1.ConnectionString := GetConnectionString;
+  ADOTable1.Active := True;
+
+  ADOTable1.Filtered := False;
+  count := ADOTable1.RecordCount;
+  statSummary.Text := inttostr(count);
+
+  ADOTable1.Filtered := False;
+  ADOTable1.Filter := 'in_use = 0';
+  ADOTable1.Filtered := True;
+  count := ADOTable1.RecordCount;
+  statUseful.Text := inttostr(count);
+
+  ADOTable1.Filtered := False;
+  ADOTable1.Filter := 'in_use = 1';
+  ADOTable1.Filtered := True;
+  count := ADOTable1.RecordCount;
+  statUnuse.Text := inttostr(count);
+
+  ADOTable1.Filtered := False;
+
 
 end;
 
