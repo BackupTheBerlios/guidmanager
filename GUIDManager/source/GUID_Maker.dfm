@@ -19,7 +19,7 @@ object Form1: TForm1
     Top = 5
     Width = 377
     Height = 356
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Verbindung'
@@ -109,11 +109,11 @@ object Form1: TForm1
       ImageIndex = 1
       object Panel2: TPanel
         Left = 8
-        Top = 216
+        Top = 10
         Width = 353
         Height = 97
         BevelInner = bvLowered
-        TabOrder = 1
+        TabOrder = 0
         object Label2: TLabel
           Left = 17
           Top = 50
@@ -145,6 +145,10 @@ object Form1: TForm1
           OnClick = Button4Click
         end
       end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Daten&bank'
+      ImageIndex = 2
       object Panel1: TPanel
         Left = 8
         Top = 8
@@ -194,6 +198,42 @@ object Form1: TForm1
           LabelPosition = lpRight
           LabelSpacing = 10
           TabOrder = 2
+        end
+      end
+      object Panel4: TPanel
+        Left = 8
+        Top = 220
+        Width = 353
+        Height = 98
+        BevelInner = bvLowered
+        TabOrder = 1
+        object Label6: TLabel
+          Left = 14
+          Top = 5
+          Width = 195
+          Height = 20
+          Caption = 'l'#246'scht GUID'#39's in der Datenbank'
+          WordWrap = True
+        end
+        object RadioGroup1: TRadioGroup
+          Left = 14
+          Top = 17
+          Width = 184
+          Height = 74
+          ItemIndex = 1
+          Items.Strings = (
+            'all&e'
+            '&in_use')
+          TabOrder = 0
+        end
+        object Button7: TButton
+          Left = 266
+          Top = 64
+          Width = 75
+          Height = 25
+          Caption = '&l'#246'schen'
+          TabOrder = 1
+          OnClick = Button7Click
         end
       end
     end

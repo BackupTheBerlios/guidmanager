@@ -18,15 +18,10 @@ type
     FileOpen1: TFileOpen;
     ADOQuery1: TADOQuery;
     EditCopy1: TEditCopy;
-    Panel1: TPanel;
     Panel2: TPanel;
     LabeledEdit2: TLabeledEdit;
     Label2: TLabel;
     Button4: TButton;
-    Button1: TButton;
-    Label3: TLabel;
-    DBGrid1: TDBGrid;
-    LabeledEdit3: TLabeledEdit;
     Panel3: TPanel;
     Button6: TButton;
     Button3: TButton;
@@ -36,6 +31,16 @@ type
     Label1: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    TabSheet3: TTabSheet;
+    Panel1: TPanel;
+    Label3: TLabel;
+    Button1: TButton;
+    DBGrid1: TDBGrid;
+    LabeledEdit3: TLabeledEdit;
+    Panel4: TPanel;
+    Label6: TLabel;
+    RadioGroup1: TRadioGroup;
+    Button7: TButton;
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -45,6 +50,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure TabSheet1Show(Sender: TObject);
     procedure TabSheet1Hide(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -172,7 +178,7 @@ try
   LabeledEdit3.SetFocus;
 
 except
-  on EOleError do 
+  on EOleError do
   begin
     ShowMessage(' Es wurde keine UDL-Datei geladen');
     PageControl1.ActivePage := TabSheet1;
@@ -186,7 +192,7 @@ end
   else
   ShowMessage('Verbindungsfehler');
 end;
-  
+
 
 
 end;
@@ -223,6 +229,34 @@ begin
   begin
     ConnectionString := GetConnectionString;
   end
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+var sql: string;
+
+begin
+ADOTable1.Active := False;
+ADOTable1.ConnectionString := ConnectionString;
+if RadioGroup1.ItemIndex = 0 then
+  begin
+    sql := 'Delete from gid_admin';
+    ADOQuery1.SQL.Add(sql);
+    ADOQuery1.ExecSQL;
+    ADOQuery1.SQL.Delete(0);
+  end;
+if RadioGroup1.ItemIndex = 1 then
+  begin
+    sql := 'Delete from gid_admin WHERE in_use = 1';
+    ADOQuery1.SQL.Add(sql);
+    ADOQuery1.ExecSQL;
+    ADOQuery1.SQL.Delete(0);
+  end;
+
+  ADOTable1.Active := False;
+  ADOTable1.Active := True;
+  LabeledEdit3.Text := '';
+  LabeledEdit3.SetFocus;
+
 end;
 
 end.
