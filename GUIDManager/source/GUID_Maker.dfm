@@ -19,7 +19,7 @@ object Form1: TForm1
     Top = 5
     Width = 377
     Height = 356
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = '&Verbindung'
@@ -238,18 +238,73 @@ object Form1: TForm1
         end
       end
     end
+    object TabSheet4: TTabSheet
+      Caption = '&Statistik'
+      ImageIndex = 3
+      OnShow = btnAktualisierungClick
+      object Panel5: TPanel
+        Left = 8
+        Top = 8
+        Width = 353
+        Height = 201
+        BevelInner = bvLowered
+        TabOrder = 0
+        object statSummary: TLabeledEdit
+          Left = 8
+          Top = 24
+          Width = 121
+          Height = 21
+          EditLabel.Width = 153
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Anzahl der vorhandenen GUID'#39's'
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object statUseful: TLabeledEdit
+          Left = 8
+          Top = 64
+          Width = 121
+          Height = 21
+          EditLabel.Width = 158
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Anzahl der verwendbaren GUID'#39's'
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object statUnuse: TLabeledEdit
+          Left = 8
+          Top = 104
+          Width = 121
+          Height = 21
+          EditLabel.Width = 137
+          EditLabel.Height = 13
+          EditLabel.Caption = 'Anzahl der benutzten GUID'#39's'
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object btnAktualisierung: TButton
+          Left = 208
+          Top = 160
+          Width = 123
+          Height = 25
+          Caption = '&aktualisieren'
+          TabOrder = 3
+          OnClick = btnAktualisierungClick
+        end
+      end
+    end
   end
   object ADOTable1: TADOTable
     ConnectionString = 'FILE NAME=C:\Programme\Borland\Delphi7\Projects\GUIDMaker.udl'
     CursorType = ctStatic
     TableName = 'gid_admin'
-    Left = 264
+    Left = 296
     Top = 13
   end
   object DataSource1: TDataSource
     DataSet = ADOTable1
-    Left = 232
-    Top = 13
+    Left = 360
+    Top = 45
   end
   object ActionManager1: TActionManager
     Left = 320
